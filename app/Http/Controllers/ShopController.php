@@ -84,8 +84,15 @@ class ShopController extends Controller
             'tag_selected' =>$tag_selected,
         ]);
     }
-
-
-
-
+    public function view(Request $request){
+        $search = $request['search'] ?? "";
+        if($search != ""){
+            $product1 = Product::where('name' ,'LIKE',"%$search%")->get();
+        }
+        else{
+            $product1 = Product::all();
+        }
+        $data = compact('product1');
+        return view('shop.index') ->with($data);
+    }
 }

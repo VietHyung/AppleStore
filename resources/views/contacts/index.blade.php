@@ -13,36 +13,35 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="contact__text">
                         <div class="section-title">
-                            <span>Information</span>
-                            <h2>Contact Us</h2>
-                            <p>As you might expect of a company that began as a high-end interiors contractor, we pay
-                                strict attention.</p>
+                            <span>Thông tin</span>
+                            <h2>Liên hệ với chúng thôi</h2>
+                            <p>Apple, công ty công nghệ hàng đầu thế giới</p>
                         </div>
                         <ul>
                             <li>
-                                <h4>Viet Nam</h4>
-                                <p>27 Cau Giay Street, Dong  District, Ha Noi Capital <br />+84 888 653 222</p>
+                                <h4>Việt Nam</h4>
+                                <p>27 Cầu Giấy, Quận Đông, Thủ đô Hà Nội <br />+84 888 653 222</p>
                             </li>
                             <li>
-                                <h4>France</h4>
-                                <p>109 Avenue Léon, 63 Clermont-Ferrand <br />+12 345-423-9893</p>
+                                <h4>America</h4>
+                                <p>	Cupertino, California, Mỹ<br />+12 345-423-9893</p>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="contact__form">
-                        <form action="#">
+                        <form action="{{ url('handle-form') }}" method ="GET">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="Name">
+                                    <input type="text" placeholder="Name" name="name">
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="Email">
+                                    <input type="text" placeholder="Email" name="email">
                                 </div>
                                 <div class="col-lg-12">
-                                    <textarea placeholder="Message"></textarea>
-                                    <button type="submit" class="site-btn">Send Message</button>
+                                    <textarea placeholder="Message" name="message"></textarea>
+                                    <button type="submit" class="site-btn">Gửi tin nhắn</button>
                                 </div>
                             </div>
                         </form>
@@ -50,6 +49,12 @@
                 </div>
             </div>
         </div>
+       @if($ok==="1")
+       <script>
+                alert('Thông tin của bạn đã được gửi thành công');
+        </script>
+        @endif
+
     </section>
     <!-- Contact Section End -->
     @endsection

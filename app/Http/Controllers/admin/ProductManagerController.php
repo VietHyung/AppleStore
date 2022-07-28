@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\OrderDetail;
 use App\Models\Product;
 use App\Models\ProductImages;
 use App\Models\ProductInformation;
@@ -87,6 +88,14 @@ class ProductManagerController extends Controller
     {
         if($request->has('id')){
             $id = $request->input('id');
+
+
+            $tontai = OrderDetail::where('id_product', $id)->first();
+            if($tontai){
+
+                return  redirect('admin-product')->with('failed','Sản phẩm đã được bán không thể xóa ');
+            }
+
             $product = Product::where('id',$id)->first();
             $product_images = ProductImages::where('id_product',$id)->get();
             //dd($product_images['1']);

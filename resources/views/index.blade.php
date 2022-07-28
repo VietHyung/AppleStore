@@ -13,7 +13,7 @@
                                   <h6>{{$image_banner->header}}</h6>
                                   <h2>{{$image_banner->title}}</h2>
                                   <p>{{$image_banner->content}}</p>
-                                  <a href="#" class="primary-btn">Buy now <span class="arrow_right"></span></a>
+                                  <a  href="{{route('shop')}}" class="primary-btn">Mua ngay</a>
                                   <div class="hero__social">
                                       <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
                                       <a href="#"><i class="fa fa-twitter"></i></a>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="banner__item__text">
                             <h2>{{$images_top_3_best_sell[0]->name}}</h2>
-                            <a href="#">Shop now</a>
+                            <a href="{{route('details',parameters:['id'=>$images_top_3_best_sell[0]->id])}}">Mua ngay</a>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="banner__item__text">
                             <h2>{{$images_top_3_best_sell[1]->name}}</h2>
-                            <a href="#">Shop now</a>
+                            <a href="{{route('details',parameters:['id'=>$images_top_3_best_sell[1]->id])}}">Mua ngay</a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="banner__item__text">
                             <h2>{{$images_top_3_best_sell[2]->name}}</h2>
-                            <a href="#">Shop now</a>
+                            <a href="{{route('details',parameters:['id'=>$images_top_3_best_sell[2]->id])}}">Mua ngày</a>
                         </div>
                     </div>
                 </div>
@@ -90,9 +90,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <ul class="filter__controls">
-                    <li class="active" data-filter="*">Best Sellers</li>
-                    <li data-filter=".new-arrivals">New Arrivals</li>
-                    <li data-filter=".hot-sales">Hot Sales</li>
+                    <li class="active" data-filter="*">Bán chạy nhất</li>
+                    <li data-filter=".new-arrivals">Sản phẩm mới</li>
+                    <li data-filter=".hot-sales">Giảm giá sốc</li>
                 </ul>
             </div>
         </div>
@@ -104,10 +104,10 @@
 {{--            <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix  ">--}}
 {{--                <div class="product__item sale">--}}
 {{--                    <div class="product__item__pic set-bg" data-setbg="{{asset($product->get_url_image())}}">--}}
-{{--                        <span class="label">New</span>--}}
+{{--                        <span class="label">Mới</span>--}}
 {{--                        <ul class="product__hover">--}}
 {{--                            <li><a href="#"><img src="../img/icon/heart.png" alt=""></a></li>--}}
-{{--                            <li><a href="#"><img src="../img/icon/compare.png" alt=""> <span>Compare</span></a></li>--}}
+{{--                            <li><a href="#"><img src="../img/icon/compare.png" alt=""> <span>So sánh</span></a></li>--}}
 {{--                            <li><a href="#"><img src="../img/icon/search.png" alt=""></a></li>--}}
 {{--                        </ul>--}}
 {{--                    </div>--}}
@@ -121,14 +121,11 @@
             @foreach($product_new_arrivals as $product)
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix   new-arrivals ">
                     <div class="product__item sale">
-                        <div class="product__item__pic set-bg" data-setbg="{{asset($product->get_url_image())}}">
-                            <span class="label"> New </span>
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="../img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="../img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="{{route('details',parameters:['id'=>$product->id])}}"><img src="img/icon/search.png" alt=""></a></li>
-                            </ul>
-                        </div>
+                        <a href="{{route('details',parameters:['id'=>$product->id])}}">
+                            <div  class="product__item__pic set-bg" data-setbg="{{$product->get_url_image()}}">
+                                <span class="label"> Mới </span>
+                            </div>
+                        </a>
                         @include('product.product_basic')
                     </div>
                 </div>
@@ -138,14 +135,11 @@
             @foreach($product_hot_sales as $product)
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix   hot-sales ">
                     <div class="product__item sale">
-                        <div class="product__item__pic set-bg" data-setbg="{{asset($product->get_url_image())}}">
-                            <span class="label"> Sale </span>
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="../img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="../img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="{{route('details',parameters:['id'=>$product->id])}}"><img src="img/icon/search.png" alt=""></a></li>
-                            </ul>
-                        </div>
+                        <a href="{{route('details',parameters:['id'=>$product->id])}}">
+                            <div  class="product__item__pic set-bg" data-setbg="{{$product->get_url_image()}}">
+                                <span class="label"> Khuyến mãi </span>
+                            </div>
+                        </a>
                         @include('product.product_basic')
                     </div>
                 </div>
@@ -169,34 +163,34 @@
                 <div class="categories__hot__deal">
                     <img src="{{asset("img/image-product/".$product_sell_time->image)}}" alt="">
                     <div class="hot__deal__sticker">
-                        <span>Sale Of</span>
+                        <span>Giảm giá</span>
                         <h5>${{$product_sell_time->price}}</h5>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 offset-lg-1">
                 <div class="categories__deal__countdown">
-                    <span>Deal Of The Week</span>
+                    <span>Giao dịch trong tuần</span>
                     <h2>{{$product_sell_time->name}}</h2>
                     <div class="categories__deal__countdown__timer" id="countdown">
                         <div class="cd-item">
                             <span>3</span>
-                            <p>Days</p>
+                            <p>Ngày</p>
                         </div>
                         <div class="cd-item">
                             <span>1</span>
-                            <p>Hours</p>
+                            <p>Giờ</p>
                         </div>
                         <div class="cd-item">
                             <span>50</span>
-                            <p>Minutes</p>
+                            <p>Phút</p>
                         </div>
                         <div class="cd-item">
                             <span>18</span>
-                            <p>Seconds</p>
+                            <p>Giây</p>
                         </div>
                     </div>
-                    <a href="#" class="primary-btn">Shop now</a>
+                    <a href="{{route('details',parameters:['id'=>$product_sell_time->id])}}" class="primary-btn">Mua ngay</a>
                 </div>
             </div>
         </div>
@@ -224,8 +218,7 @@
             <div class="col-lg-4">
                 <div class="instagram__text">
                     <h2>Instagram</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
+                    <h5>Mọi người đều có một câu chuyện để kể</h5>
                     <h3>#Apple_Store</h3>
                 </div>
             </div>
@@ -240,8 +233,8 @@
 {{--        <div class="row">--}}
 {{--            <div class="col-lg-12">--}}
 {{--                <div class="section-title">--}}
-{{--                    <span>Latest News</span>--}}
-{{--                    <h2>Fashion New Trends</h2>--}}
+{{--                    <span>Tin mới nhất</span>--}}
+{{--                    <h2>Xu hướng thời trang mới</h2>--}}
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
@@ -250,9 +243,9 @@
 {{--                <div class="blog__item">--}}
 {{--                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-1.jpg"></div>--}}
 {{--                    <div class="blog__item__text">--}}
-{{--                        <span><img src="img/icon/calendar.png" alt=""> 16 February 2020</span>--}}
-{{--                        <h5>What Curling Irons Are The Best Ones</h5>--}}
-{{--                        <a href="#">Read More</a>--}}
+{{--                        <span><img src="img/icon/calendar.png" alt=""> 16 tháng 4 năm 2022</span>--}}
+{{--                        <h5>Điện thoại thông minh nào tốt nhất</h5>--}}
+{{--                        <a href="#">Đọc thêm</a>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
 {{--            </div>--}}
@@ -260,9 +253,9 @@
 {{--                <div class="blog__item">--}}
 {{--                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-2.jpg"></div>--}}
 {{--                    <div class="blog__item__text">--}}
-{{--                        <span><img src="img/icon/calendar.png" alt=""> 21 February 2020</span>--}}
-{{--                        <h5>Eternity Bands Do Last Forever</h5>--}}
-{{--                        <a href="#">Read More</a>--}}
+{{--                        <span><img src="img/icon/calendar.png" alt=""> 21 tháng 4 năm 2022</span>--}}
+{{--                        <h5>Điện thoại thông minh nào tốt nhất</h5>--}}
+{{--                        <a href="#">Đọc thêm</a>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
 {{--            </div>--}}
@@ -270,9 +263,9 @@
 {{--                <div class="blog__item">--}}
 {{--                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-3.jpg"></div>--}}
 {{--                    <div class="blog__item__text">--}}
-{{--                        <span><img src="img/icon/calendar.png" alt=""> 28 February 2020</span>--}}
-{{--                        <h5>The Health Benefits Of Sunglasses</h5>--}}
-{{--                        <a href="#">Read More</a>--}}
+{{--                        <span><img src="img/icon/calendar.png" alt=""> 28 tháng 8 năm 2022</span>--}}
+{{--                        <h5>Điện thoại thông minh nào tốt nhất</h5>--}}
+{{--                        <a href="#">Đọc thêm</a>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
 {{--            </div>--}}

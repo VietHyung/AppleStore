@@ -8,21 +8,7 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v1</li>
-                        </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div>
+      
         <!-- /.content-header -->
 
         <!-- Main content -->
@@ -30,11 +16,11 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">User</h3>
+                    <h3 class="card-title">Khách hàng</h3>
 
                     <div class="card-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
-                            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                            <input type="text" name="table_search" class="form-control float-right" placeholder="Tìm kiếm ...">
 
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-default">
@@ -50,11 +36,11 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>User name</th>
-                            <th>Full name</th>
-                            <th>Permission</th>
+                            <th>Tên tài khoản</th>
+                            <th>Họ và tên</th>
+                            <th>Quyền</th>
                             <th>Email</th>
-                            <th>Status</th>
+                            <th>Trạng thái</th>
                         </tr>
                         </thead>
                         <tbody>

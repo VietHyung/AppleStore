@@ -8,10 +8,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>Shop</h4>
+                        <h4>Cửa hàng</h4>
                         <div class="breadcrumb__links">
-                            <a href="{{route('home')}}">Home</a>
-                            <span>Product</span>
+                            <a href="{{route('home')}}">Trang chủ</a>
+                            <span>Sản phẩm</span>
                         </div>
                     </div>
                 </div>
@@ -27,22 +27,22 @@
                 <div class="col-lg-3">
                     <div class="shop__sidebar">
                         <div class="shop__sidebar__search">
-                            <form action="#">
-                                <input type="text" placeholder="Search...">
-                                <button type="submit"><span class="icon_search"></span></button>
+                            <form action="">
+                                <input type="text" name="search" placeholder="Tìm kiếm...">
+                                <button><img src="{{asset('img/icon/search.png')}}" alt=""></button>
                             </form>
                         </div>
                         <div class="shop__sidebar__accordion">
                             <div class="accordion" id="accordionExample">
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
+                                        <a data-toggle="collapse" data-target="#collapseOne">Phân loại</a>
                                     </div>
                                     <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
-                                                    <li><a @if($category_selected ===null) style="color: black;"  @endif href="{{route('shop')}}">All</a></li>
+                                                    <li><a @if($category_selected ===null) style="color: black;"  @endif href="{{route('shop')}}">Tất cả</a></li>
                                                     @foreach($categories as $category)
                                                         <li><a @if(!strcmp($category_selected , $category->name)) style="color: black;"  @endif href="{{route('shop',parameters: ["category"=>$category->name,'price_max'=>$price_max_selected,'price_min'=>$price_min_selected,'tag'=>$tag_selected])}}">{{$category->name}}</a></li>
                                                     @endforeach
@@ -54,14 +54,14 @@
 
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
+                                        <a data-toggle="collapse" data-target="#collapseThree">Phân loại theo giá</a>
                                     </div>
                                     <div id="collapseThree" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__price">
                                                 <ul>
 
-                                                    <li><a @if($price_min_selected === null ) style="color: black;" @endif href="{{route('shop')}}">All</a></li>
+                                                    <li><a @if($price_min_selected === null ) style="color: black;" @endif href="{{route('shop')}}">Tất cả</a></li>
                                                     @foreach($level_price as $price)
                                                         <li><a @if($price_min_selected == $price && $price_min_selected != null) style="color: black;"  @endif   href="{{route('shop',parameters: ["price_min"=>$price, "price_max"=>$price+500,'category'=>$category_selected,'tag'=>$tag_selected])}}">${{$price}} - ${{$price+500}}</a></li>
                                                     @endforeach
@@ -74,7 +74,7 @@
 
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseFive">Colors</a>
+                                        <a data-toggle="collapse" data-target="#collapseFive">Màu</a>
                                     </div>
                                     <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
@@ -112,14 +112,14 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseSix">Tags</a>
+                                        <a data-toggle="collapse" data-target="#collapseSix">Thể loại</a>
                                     </div>
                                     <div id="collapseSix" class="collapse show" data-parent="#accordionExample">
                                         <div class="card-body">
                                             <div class="shop__sidebar__tags">
                                                 <a href="{{route('shop',parameters: ["category"=>$category_selected,'price_max'=>$price_max_selected,'price_min'=>$price_min_selected,'tag'=>null])}}">All</a>
                                                 <a href="{{route('shop',parameters: ["category"=>$category_selected,'price_max'=>$price_max_selected,'price_min'=>$price_min_selected,'tag'=>'Pro'])}}">Pro</a>
-                                                <a href="{{route('shop',parameters: ["category"=>$category_selected,'price_max'=>$price_max_selected,'price_min'=>$price_min_selected,'tag'=>'Promax'])}}">Promax</a>
+                                                <a href="{{route('shop',parameters: ["category"=>$category_selected,'price_max'=>$price_max_selected,'price_min'=>$price_min_selected,'tag'=>'Pro max'])}}">Pro max</a>
                                                 <a href="{{route('shop',parameters: ["category"=>$category_selected,'price_max'=>$price_max_selected,'price_min'=>$price_min_selected,'tag'=>'Plus'])}}">Plus</a>
                                                 <a href="{{route('shop',parameters: ["category"=>$category_selected,'price_max'=>$price_max_selected,'price_min'=>$price_min_selected,'tag'=>'Mini'])}}">Mini</a>
 
@@ -136,14 +136,14 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__left">
-                                    <p>Showing 1–12 of 126 results</p>
+                                    <p>Hiển thị 1-12 trong số 126 kết quả</p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__right">
-                                    <p>Sort by Price:</p>
+                                    <p>Sắp xếp theo giá:</p>
                                     <select>
-                                        <option value="">Low To High</option>
+                                        <option value="">Thấp đến cao</option>
                                         <option value="">$0 - $55</option>
                                         <option value="">$55 - $100</option>
                                     </select>
@@ -155,7 +155,6 @@
                         @foreach($products as $product)
                            @include('product.product')
                         @endforeach
-
                     </div>
 
                     {{ $products->links('shop.my_pagination') }}

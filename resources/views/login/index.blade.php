@@ -1,224 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>login</title>
-    <link rel="stylesheet" href="css/login.css">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css" type="text/css">
 </head>
 <body>
-    <div id="container" class="container">
-        <!--FORM SECTION-->
-        <div class="row">
-            <!--SIGN UP-->
-            <form class="col align-items-center flex-col sign-up" id="r-form" onsubmit ="return match()" method="post" action="{{route('register')}}">
-                @csrf
-                <div class="form-wrapper align-items-center">
-                    <div class="form sign-up">
-                        <div class="input-group">
-                            <i class='bx bxs-user'></i>
-                            <input type="text" name="username" id="name" placeholder="username" ">
-                        </div>
-                        <div class="input-group">
-                            <i class='bx bxs-user'></i>
-                            <input type="text" name="fullname" id="name" placeholder="fullname" ">
-                        </div>
-                        <div class="input-group">
-                            <i class='bx bx-mail-send'></i>
-                            <input type="email" name="email" id="email" placeholder="email" ">
-
-                        </div>
-                        <p style="text-align:left;" id="ckemail"></p>
-                        <div class="input-group">
-                            <i class='bx bxs-lock-alt'></i>
-                            <input type="password" name="password" id="pswd1" placeholder="password" ">
-                        </div>
-                        <p style="text-align:left;" id="ckpass"></p>
-                        <div class="input-group">
-                            <i class='bx bxs-lock' ></i>
-                            <input type="password" name="confirmPassword" id="pswd2" placeholder="Confirm Password" ">
-
-                        </div>
-                        <p style="text-align:left;" id="ckpass2"></p>
-                        <button onclick="match()">
-                            Sign up
-                        </button>
-                        <p>
-                            <span>
-                                Already have an account?
-                            </span>
-                            <b onclick="toggle()" class="pointer">
-                                Sign in here
-                            </b>
-                        </p>
-                        <p>
-                            <a href="{{asset('../')}}">Back to Home</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="form-wrapper">
-                    <div class="social-list align-items-center sign-up">
-                        <div class="align-items-center fb">
-                            <i class='bx bxl-facebook'></i>
-                        </div>
-                        <div class="align-items-center gg">
-                            <i class='bx bxl-google'></i>
-                        </div>
-                        <div class="align-items-center tw">
-                            <i class='bx bxl-twitter'></i>
-                        </div>
-                        <div class="align-items-center in">
-                            <i class='bx bxl-instagram-alt'></i>
-                        </div>
-                    </div>
-                </div>
-
-            </form>
-            <!--END SIGN UP-->
-            <!--SIGN IN-->
-            <form class="col align-items-center flex-col sign-in" method="POST" action="{{route('postLogin')}}">
-                @csrf
-                <div class="form-wrapper align-items-center">
-                    <div class="form sign-in">
-                        <div class="input-group">
-                            <i class='bx bxs-user'></i>
-                            <input type="text" id="namein" name="usernamein" placeholder="username">
-                        </div>
-                        <p style="text-align:left;" id="cknamein"></p>
-                        <div class="input-group">
-                            <i class='bx bxs-lock-alt'></i>
-                            <input type="password" id="passin" name="passwordin" placeholder="password">
-
-                        </div>
-                        @if(isset($check))
-                            <div class="alert alert-danger" role="alert">
-                                Đăng nhập sai !!!
-                            </div>
-                            @endif
-                        <p style="text-align:left;" id="ckpassin"></p>
-                        <button>
-                            Sign in
-                        </button>
-                        <p>
-                            <b>
-                                Forgot password?
-                            </b>
-
-                        </p>
-                        <p>
-                            <span>
-                                Don't have an account?
-                            </span>
-                            <b onclick="toggle()" class="pointer">
-                                Sign up here
-                            </b>
-                        </p>
-                        <p>
-                        <a href="{{asset('../')}}">Back to Home</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="form-wrapper">
-                    <div class="social-list align-items-center sign-in">
-                        <div class="align-items-center fb">
-                            <i class='bx bxl-facebook'></i>
-                        </div>
-                        <div class="align-items-center gg">
-                            <i class='bx bxl-google'></i>
-                        </div>
-                        <div class="align-items-center tw">
-                            <i class='bx bxl-twitter'></i>
-                        </div>
-                        <div class="align-items-center in">
-                            <i class='bx bxl-instagram-alt'></i>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <!--END SIGN in-->
-        </div>
-        <!--END FORM SECTION-->
-        <!--CONTENT SECTION-->
-        <div class="row content-row">
-            <div class="col align-items-center flex-col ">
-                <div class="text sign-in">
-                    <h2>
-                        Apple Store
-                    </h2>
-                    <p>
-                        Apple think different
-                    </p>
-                </div>
-                <div class="img sign-in">
-                    <img src="img/login.png" alt="back1">
-                </div>
+    <div class="main">
+        <form method="POST" class="form" id="login-form" action="{{route('postLogin')}}">
+            @csrf
+            <h3 class="heading">ĐĂNG NHẬP</h3>
+            <p class="desc">Tham gia để có thông báo mới nhất ! ❤️</p>
+            
+            <div class="spacer"></div>
+            
+            <div class="form-group">
+                <label for="username" class="form-label">Tên đăng nhập</label>
+                <input id="username" name="usernamein" rules="required" type="text" placeholder="VD: Việt Hưng" class="form-control">
+                <span class="form-message"></span>
             </div>
-            <!--SIGN UP CONTENT-->
-            <div class="col align-items-center flex-col" >
-                <div class="img sign-up">
-                    <img src="img/login.png" alt="back1">
-                </div>
-                <div class="text sign-up">
-                    <h2>
-                        Join with us
-                    </h2>
-                    <p>
-                        Become a member to get the best deals !!!
-                    </p>
-                </div>
+            
+            <div class="form-group">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input id="password" name="passwordin" rules="required|min:3" type="password" placeholder="Nhập mật khẩu" class="form-control">
+                <span class="form-message"></span>
             </div>
-            <!--END SIGN UP CONTENT-->
-        </div>
-        <!--END CONTENT SECTION-->
+            <button class="form-submit" style="font-size:20px">Đăng nhập</button>
+            <br>
+            <br>
+            @if(isset($check))
+                <div style="color:red;font-size:13px" role="alert">
+                    Đăng nhập sai !!!
+                </div>
+            @endif
+            <br>
+            <br>
+            <p>Bạn chưa có tài khoản ?  <a style="color:orange;font-weight:bold;text-decoration:none; font-size:12px" href="{{asset('../register')}}">Đăng ký</a></p>
+            <br>
+            <br>
+            <a style="text-decoration:none; font-size:12px" href="{{asset('../')}}">Quay lại trang chủ</a>
+        </form>
     </div>
-    <Script type="text/javascript">
-        function match(){
-            var name = document.getElementById("name").value;
-            var email = document.getElementById("email").value;
 
-            var pw1 = document.getElementById("pswd1").value;
-            var pw2 = document.getElementById("pswd2").value;
-            if(name == "") {
-                document.getElementById("ckname").innerHTML = "**Required**";
-                return false;
-            }
-            if(email == "") {
-                document.getElementById("ckemail").innerHTML = "**Required**";
-                return false;
-            }
-
-            if(pw1 == "") {
-                document.getElementById("ckpass").innerHTML = "**Required**";
-                return false;
-            }
-            if(pw1 != pw2)
-            {
-                document.getElementById("ckpass2").innerHTML = "**Passwords are not same**";
-                return false;
-            }
+    <script src="js/login.js"></script>
+    <script>
+        var form = new Validator('#login-form');
+        form.onsubmit = function(fomrData){
+            console.log(fomrData);                                                                                                                          
         }
-        function matchlgin(){
-            var namelgin = document.getElementById("namein").value;
-            var passwordlgin = document.getElementById("passin").value;
-            if(namelgin == "") {
-                document.getElementById("cknamein").innerHTML = "**Required**";
-                return false;
-            }
-            if(passwordlgin == "") {
-                document.getElementById("ckpassin").innerHTML = "**Required**";
-                return false;
-            }
-        }
-
-        let container = document.getElementById('container')
-        toggle = () =>{
-            container.classList.toggle('sign-in')
-            container.classList.toggle('sign-up')
-        }
-        setTimeout(() =>{
-                container .classList.add('sign-in')
-            },200)
+        
     </script>
 </body>
 </html>

@@ -11,11 +11,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
-                    <h4>Shopping Cart</h4>
+                    <h4>Giỏ hàng</h4>
                     <div class="breadcrumb__links">
-                        <a href="./index.html">Home</a>
-                        <a href="./shop.html">Shop</a>
-                        <span>Shopping Cart</span>
+                        <a href="./index.html">Trang chủ</a>
+                        <a href="./shop.html">Cửa hàng</a>
+                        <span>Giỏ hàng</span>
                     </div>
                 </div>
             </div>
@@ -33,10 +33,10 @@
                     <table>
                         <thead>
                         <tr>
-                            <th>Product</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th>Mua</th>
+                            <th>Sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Tổng cộng</th>
+{{--                            <th>Mua</th>--}}
                             <th></th>
                         </tr>
                         </thead>
@@ -63,8 +63,8 @@
                                     </div>
                                 </td>
                                 <td class="cart__price"><span class="span-total-price">{{$product->price*$cart[$product->id]}}</span></td>
-                                <td class="cart__checkbox"><input type="checkbox" name=""></td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
+{{--                                <td class="cart__checkbox"><input type="checkbox" name=""></td>--}}
+                                <td data-id="{{$product->id}}" class="cart__close"><i class="fa fa-close"></i></td>
 
                             </tr>
                         @endforeach
@@ -76,35 +76,42 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn">
-                            <a href="#">Continue Shopping</a>
+                            <a href="{{route('shop')}}">Tiếp tục mua sắm</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                        <div class="continue__btn update__btn">
-                            <a href="#"><i class="fa fa-spinner"></i> Update cart</a>
-                        </div>
-                    </div>
+{{--                    <div class="col-lg-6 col-md-6 col-sm-6">--}}
+{{--                        <div class="continue__btn update__btn">--}}
+{{--                            <a href="#"><i class="fa fa-spinner"></i> Update cart</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="cart__discount">
-                    <h6>Discount codes</h6>
+                    <h6>Mã giảm giá</h6>
                     <form action="#">
-                        <input type="text" placeholder="Coupon code">
-                        <button type="submit">Apply</button>
+                        <input type="text" placeholder="Mã giảm giá">
+                        <button type="submit">Áp dụng</button>
                     </form>
                 </div>
                 <div class="cart__total">
-                    <h6>Cart total</h6>
+                    <h6>Tổng giỏ hàng</h6>
                     <ul>
-                        <li>Subtotal <span>$ 169.50</span></li>
-                        <li>Total <span>$ 169.50</span></li>
+                        <li>Tổng phụ <span id="subtotal">{{'$'.$total}}</span></li>
+                        <li>Tổng cộng <span id="total">{{'$'.$total}}</span></li>
                     </ul>
-                    <a href="{{route('checkout')}}" class="primary-btn">Proceed to checkout</a>
+                    <a @if(empty($_SESSION['cart'])) href="{{route('shop')}}"  onclick="myclick()"  @else  href="{{route('checkout')}}"  @endif
+            class="primary-btn">Đặt hàng</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <script language="javascript">
+        function myclick() {
+         alert("Giỏ hàng trống !!!");
+        }
+    </script>
 </section>
 <!-- Shopping Cart Section End -->
 

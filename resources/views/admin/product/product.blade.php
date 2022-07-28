@@ -8,21 +8,7 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v1</li>
-                        </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div>
+     
         <!-- /.content-header -->
 
         <!-- Main content -->
@@ -30,7 +16,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">User</h3>
+                    <h3 class="card-title">Sản phẩm</h3>
 
                     <div class="card-tools">
 
@@ -42,11 +28,11 @@
                                 <a class="btn btn-primary btn-sm" href="{{route('admin-product-create')}}">
                                     <i class="fas fa-folder">
                                     </i>
-                                    Add
+                                    Thêm
                                 </a>
                             </div>
 
-                            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                            <input type="text" name="table_search" class="form-control float-right" placeholder="Tìm kiếm ...">
 
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-default">
@@ -62,12 +48,12 @@
                         <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Image</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Sold</th>
-                            <th>Modify</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Hình ảnh</th>
+                            <th>Giá bán</th>
+                            <th>Số lượng</th>
+                            <th>Đã bán</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -83,12 +69,12 @@
                                     <a class="btn btn-info btn-sm" href="{{route('admin-product-edit',parameters: ['id'=>$product->id])}}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
-                                        Edit
+                                        Sửa
                                     </a>
                                     <button data-id="{{$product->id}}"  class="btn_click_delete btn btn-danger btn-sm">
                                         <i class="fas fa-trash">
                                         </i>
-                                        Delete
+                                        Xóa
                                     </button>
                                 </td>
                             </tr>
@@ -123,7 +109,7 @@
                 var r = confirm("Bạn có chắc chắn muốn xóa sản phẩm này không ?");
                 if (r == true) {
                     $.ajax({
-                        url: '{{route('admin-product-delete')}}',
+                        url: "{{route('admin-product-delete')}}",
                         type: 'GET',
                         data: {id}
                     }).done(function () {

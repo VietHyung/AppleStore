@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2022 at 09:56 AM
+-- Generation Time: Jun 30, 2022 at 07:23 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 7.3.33
+-- PHP Version: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,70 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `applestore`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `logs`
---
-
-CREATE TABLE `logs` (
-  `username` varchar(256) NOT NULL,
-  `action` varchar(256) NOT NULL,
-  `lv` int(11) NOT NULL,
-  `create_time` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `logs`
---
-
-INSERT INTO `logs` (`username`, `action`, `lv`, `create_time`) VALUES
-('admin', 'View detail order', 1, '2020-10-19 07:17:27'),
-('admin', 'Edit Category', 1, '2020-10-19 08:26:48'),
-('admin', 'Edit Category', 1, '2020-10-19 08:27:30'),
-('admin', 'Edit Category', 1, '2020-10-19 08:28:50'),
-('admin', 'Edit Category', 1, '2020-10-19 08:29:43'),
-('admin', 'Add product', 1, '2020-10-19 08:59:28'),
-('admin', 'Add product', 1, '2020-10-19 09:04:49'),
-('admin', 'Add product', 1, '2020-10-19 09:13:03'),
-('admin', 'Add product', 1, '2020-10-19 09:16:50'),
-('admin', 'Add product', 1, '2020-10-19 09:20:21'),
-('admin', 'Add product', 1, '2020-10-19 09:24:11'),
-('admin', 'Add product', 1, '2020-10-19 09:26:42'),
-('admin', 'Add product', 1, '2020-10-19 09:30:10'),
-('admin', 'Add product', 1, '2020-10-19 09:32:59'),
-('admin', 'Add product', 1, '2020-10-19 09:36:02'),
-('admin', 'Add product', 1, '2020-10-19 09:40:25'),
-('admin', 'Add product', 1, '2020-10-19 09:44:03'),
-('admin', 'Add product', 1, '2020-10-19 09:46:46'),
-('admin', 'Add product', 1, '2020-10-19 09:49:29'),
-('admin', 'Edit product', 1, '2020-10-19 09:50:07'),
-('admin', 'Edit product', 1, '2020-10-19 09:50:35'),
-('admin', 'Edit product', 1, '2020-10-19 09:52:02'),
-('admin', 'Accept order', 1, '2020-10-19 09:59:51'),
-('admin', 'View detail order', 1, '2020-10-19 09:59:58'),
-('admin', 'View detail order', 1, '2020-10-19 10:00:08'),
-('admin', 'Completed order', 1, '2020-10-19 10:07:58'),
-('admin', 'View detail order', 1, '2020-10-19 10:08:02'),
-('admin', 'View detail order', 1, '2020-10-19 10:11:41'),
-('admin', 'View detail order', 1, '2020-10-19 10:11:48'),
-('admin', 'Completed order', 1, '2020-10-19 10:11:53'),
-('admin', 'View detail order', 1, '2020-10-19 10:12:53'),
-('admin', 'Completed order', 1, '2020-10-19 10:13:02'),
-('admin', 'View detail order', 1, '2020-10-19 10:13:04'),
-('admin', 'View detail order', 1, '2020-10-19 10:13:47'),
-('admin', 'Accept order', 1, '2020-10-19 10:13:53'),
-('admin', 'View detail order', 1, '2020-10-19 10:15:53'),
-('admin', 'View detail order', 1, '2020-10-19 10:15:59'),
-('admin', 'Add notifications', 1, '2020-10-19 10:16:23'),
-('admin', 'Add notifications', 1, '2020-10-19 10:16:23'),
-('admin', 'Add notifications', 1, '2020-10-19 10:16:23'),
-('admin', 'Accept order', 1, '2020-10-19 10:33:38'),
-('admin', 'Completed order', 1, '2020-10-19 10:33:40'),
-('admin', 'View detail order', 1, '2020-10-19 10:33:45'),
-('admin', 'Add Category', 1, '2020-10-19 10:34:28'),
-('admin', 'Add product', 1, '2020-10-19 10:36:04');
 
 -- --------------------------------------------------------
 
@@ -104,70 +40,11 @@ CREATE TABLE `management_image_banner` (
 --
 
 INSERT INTO `management_image_banner` (`id`, `url`, `header`, `title`, `content`) VALUES
-(1, 'bg1.jpg', 'Breakthrough product', 'Iphone - 13 Pro Max 2021', 'The iPhone 13 series was officially opened for sale on September 15, 2021. iPhone 13 Series appears with 4 versions including iPhone 13 mini - iPhone 13 - iPhone 13 Pro and iPhone 13 Pro Max'),
-(5, 'bg2.jpg', 'Featured Product', 'MacBook Pro M1 2020 ', 'MacBook Pro M1 was in the \"One More Thing\" event held on the morning of 11/11/2020. The new Apple product has the same price, but comes with a more powerful Apple M1 chip and an additional cooling fan'),
-(6, 'bg3.jpg', 'Featured Product', 'iPad Air 5th generation', 'On March 9, 2022. In the event called Peek Performance, Apple officially introduced the 5th generation iPad Air. The new iPad product will use the same Apple Silicon M1 chip as the iPad Pro. In particular, iPad Air also has up to 5 colors for users to choose from.'),
-(7, 'bg4.jpg', 'Featured Product', 'Apple Watch Series 7', 'After announcing two new iPads, Apple officially introduced the Apple Watch Series 7 at a big event on September 14. The smartwatch generation 7 with a large screen and the device will support watchOS 8 with fall detection when cycling, optimizing exercise tracking by e-bike'),
-(8, 'bg5.jpg', 'Featured Product', 'Apple TV 4K ', 'At the Apple Spring Loaded event in April 2021. Apple introduced the Apple TV 4K product with outstanding upgrades on the product including the A12 Bionic processor chip, support for HDR content with high frame rate, the ability to using an iPhone (using a light sensor called the Color balance feature).');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `management_site`
---
-
-CREATE TABLE `management_site` (
-  `logo_brand` varchar(256) NOT NULL,
-  `name_brand` varchar(256) NOT NULL,
-  `title_website` varchar(256) NOT NULL,
-  `logo_website` varchar(256) NOT NULL,
-  `footer_information_left` varchar(256) NOT NULL,
-  `footer_information_center` varchar(256) NOT NULL,
-  `footer_information_right` varchar(256) NOT NULL,
-  `footer_information_bottom` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `management_site`
---
-
-INSERT INTO `management_site` (`logo_brand`, `name_brand`, `title_website`, `logo_website`, `footer_information_left`, `footer_information_center`, `footer_information_right`, `footer_information_bottom`) VALUES
-('LogoN-White.png', 'My store', 'My store', 'LogoN-Black.png', 'a', 'a', 'a', 'Copyright © 2020 KhanhNhu\'s N-BUY. All rights reserved.'),
-('LogoN-White.png', 'My store', 'My store', 'LogoN-Black.png', 'a', 'a', 'a', 'Copyright © 2020 KhanhNhu\'s N-BUY. All rights reserved.');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `notifications`
---
-
-CREATE TABLE `notifications` (
-  `id` int(11) NOT NULL,
-  `content` varchar(256) NOT NULL,
-  `lv` int(11) NOT NULL,
-  `create_time` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `notifications`
---
-
-INSERT INTO `notifications` (`id`, `content`, `lv`, `create_time`) VALUES
-(5, 'New order fromLương Văn Như', 1, '2020-10-19 02:02:48'),
-(6, 'New order fromLương Văn Như', 15, '2020-10-19 02:02:48'),
-(7, 'New order from Lương Văn Như', 1, '2020-10-19 09:53:51'),
-(8, 'New order from Lương Văn Như', 15, '2020-10-19 09:53:51'),
-(9, 'New order from Lương Văn Như', 1, '2020-10-19 09:57:51'),
-(10, 'New order from Lương Văn Như', 15, '2020-10-19 09:57:51'),
-(11, 'New order from Lương Văn Như', 1, '2020-10-19 10:13:38'),
-(12, 'New order from Lương Văn Như', 15, '2020-10-19 10:13:38'),
-(13, 'Test', 1, '2020-10-19 10:16:23'),
-(14, 'Test', 15, '2020-10-19 10:16:23'),
-(15, 'Test', 100, '2020-10-19 10:16:23'),
-(16, 'New order from Lương Văn Như', 1, '2020-10-19 10:32:16'),
-(17, 'New order from Lương Văn Như', 15, '2020-10-19 10:32:16'),
-(18, 'New order from Lương Văn Như', 1, '2020-10-19 10:32:22'),
-(19, 'New order from Lương Văn Như', 15, '2020-10-19 10:32:22');
+(1, 'bg1.jpg', 'Sản phẩm đột phá', 'Iphone - 13 Pro Max 2021', 'Dòng iPhone 13 chính thức được mở bán vào ngày 15 tháng 9 năm 2021. Dòng iPhone 13 xuất hiện với 4 phiên bản gồm iPhone 13 mini - iPhone 13 - iPhone 13 Pro và iPhone 13 Pro Max'),
+(5, 'bg2.jpg', 'Sản phẩm nổi bật', 'MacBook Pro M1 2020 ', 'MacBook Pro M1 nằm trong sự kiện \"One More Thing\" diễn ra vào sáng 11/11/2020. Sản phẩm mới của Apple có cùng mức giá nhưng được trang bị chip Apple M1 mạnh mẽ hơn và có thêm quạt tản nhiệt'),
+(6, 'bg3.jpg', 'Sản phẩm nổi bật', 'iPad Air thế hệ 5', 'Vào ngày 9 tháng 3 năm 2022. Trong sự kiện mang tên Peek Performance, Apple đã chính thức giới thiệu iPad Air thế hệ thứ 5. Sản phẩm iPad mới sẽ sử dụng chip Apple Silicon M1 giống như iPad Pro. Đặc biệt, iPad Air còn có tới 5 màu cho người dùng lựa chọn.'),
+(7, 'bg4.jpg', 'Sản phẩm nổi bật', 'Apple Watch Series 7', 'Sau khi công bố hai chiếc iPad mới, Apple đã chính thức giới thiệu Apple Watch Series 7 tại một sự kiện lớn vào ngày 14 tháng 9. Đồng hồ thông minh thế hệ 7 với màn hình lớn và thiết bị sẽ hỗ trợ watchOS 8 với tính năng phát hiện ngã khi đạp xe, tối ưu hóa theo dõi tập thể dục bằng e-bike'),
+(8, 'bg5.jpg', 'Sản phẩm nổi bật', 'Apple TV 4K ', 'Tại sự kiện Apple Spring Loaded vào tháng 4 năm 2021. Apple đã giới thiệu sản phẩm Apple TV 4K với những nâng cấp nổi bật trên sản phẩm bao gồm chip xử lý A12 Bionic, hỗ trợ nội dung HDR với tốc độ khung hình cao, khả năng sử dụng iPhone (sử dụng cảm biến ánh sáng gọi là tính năng Cân bằng màu).');
 
 -- --------------------------------------------------------
 
@@ -176,7 +53,6 @@ INSERT INTO `notifications` (`id`, `content`, `lv`, `create_time`) VALUES
 --
 
 CREATE TABLE `order_detail` (
-  `id` int(11) NOT NULL,
   `id_order` int(11) NOT NULL,
   `id_product` int(11) NOT NULL,
   `price` float NOT NULL,
@@ -187,16 +63,36 @@ CREATE TABLE `order_detail` (
 -- Dumping data for table `order_detail`
 --
 
-INSERT INTO `order_detail` (`id`, `id_order`, `id_product`, `price`, `qty`) VALUES
-(130, 162, 72, 299, 3),
-(131, 162, 59, 899, 3),
-(132, 162, 61, 1599, 2),
-(133, 163, 64, 499, 1),
-(134, 163, 63, 799, 1),
-(142, 168, 66, 2099, 1),
-(143, 168, 68, 1299, 1),
-(144, 169, 66, 2099, 2),
-(145, 169, 68, 1299, 1);
+INSERT INTO `order_detail` (`id_order`, `id_product`, `price`, `qty`) VALUES
+(162, 72, 299, 3),
+(162, 59, 899, 3),
+(162, 61, 1599, 2),
+(163, 64, 499, 1),
+(163, 63, 799, 1),
+(168, 66, 2099, 1),
+(168, 68, 1299, 1),
+(169, 66, 2099, 2),
+(169, 68, 1299, 1),
+(170, 67, 3000, 6),
+(170, 59, 899, 1),
+(170, 63, 799, 2),
+(171, 67, 3000, 6),
+(171, 59, 899, 1),
+(171, 63, 799, 2),
+(172, 67, 3000, 4),
+(172, 59, 899, 1),
+(172, 63, 799, 2),
+(173, 59, 899, 1),
+(173, 71, 499, 1),
+(173, 63, 799, 1),
+(174, 59, 899, 6),
+(174, 60, 1099, 5),
+(174, 61, 1599, 3),
+(174, 64, 499, 1),
+(174, 62, 599, 1),
+(174, 63, 799, 1),
+(174, 67, 3000, 1),
+(174, 66, 2099, 1);
 
 -- --------------------------------------------------------
 
@@ -214,7 +110,7 @@ CREATE TABLE `order_list` (
   `total_price` float NOT NULL,
   `address` varchar(256) NOT NULL,
   `payment_method` varchar(256) NOT NULL,
-  `note` text NOT NULL,
+  `note` text NOT NULL DEFAULT '',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -224,10 +120,15 @@ CREATE TABLE `order_list` (
 --
 
 INSERT INTO `order_list` (`username`, `id_order`, `fullname`, `email`, `phone_number`, `status`, `total_price`, `address`, `payment_method`, `note`, `created_at`, `updated_at`) VALUES
-('hyung', 162, 'hung', 's2@gmail.com', 899305432, 1, 6792, 'hanoi', 'on', '', '2022-05-18 08:50:41', '2022-05-18 08:50:41'),
-('KK', 163, 'Nguyễn Đăng Khánh', 'khanh42869@gmail.com', 899305432, 1, 1298, 'Thai Nguyen', 'cashOnDelivery', '', '2022-05-18 08:58:29', '2022-05-18 08:58:29'),
+('hyung', 162, 'hung', 's2@gmail.com', 899305432, 1, 6792, 'hanoi', 'Thanh toán khi nhận hàng', '', '2022-05-18 08:50:41', '2022-05-18 08:50:41'),
+('KK', 163, 'Nguyễn Đăng Khánh', 'khanh42869@gmail.com', 899305432, 1, 1298, 'Thai Nguyen', 'Thanh toán khi nhận hàng', '', '2022-05-18 08:58:29', '2022-05-18 08:58:29'),
 ('khanhxz', 168, 'Nguyễn Đăng Khánh', 'sss@gmail.com', 123345123, 1, 3398, 'Thai Nguyen', 'Visa', '', '2022-05-18 11:30:01', '2022-05-18 11:30:01'),
-('gutboykeoconvoi', 169, 'Vy Văn Hùng', 'sef123@gmail.com', 123654231, 1, 5497, 'Bac Giang', 'Visa', '', '2022-05-18 11:32:31', '2022-05-18 11:32:31');
+('gutboykeoconvoi', 169, 'Vy Văn Hùng', 'sef123@gmail.com', 123654231, 1, 5497, 'Bac Giang', 'Visa', '', '2022-05-18 11:32:31', '2022-05-18 11:32:31'),
+('hung', 170, 'Vy Văn Hùng', 'vyvanhung2882001bg@gmail.com', 879519709, 1, 20497, 'Bắc Giang', 'Thanh toán khi nhận hàng', '', '2022-05-24 04:21:55', '2022-05-24 04:21:55'),
+('hung', 171, 'Vy Văn Hùng', 'vyvanhung2882001bg@gmail.com', 879519709, 1, 20497, 'Bắc Giang', 'paypal', '', '2022-05-24 04:23:19', '2022-05-24 04:23:19'),
+('hung', 172, 'Vy Văn Hùng', 'vyvanhung2882001bg@gmail.com', 879519709, 1, 14497, 'Bắc Giang', 'Thanh toán khi nhận hàng', '', '2022-05-24 04:28:52', '2022-05-24 04:28:52'),
+('hung', 173, 'khanh', 'vyvanhung2882001bg@gmail.com', 976486532, 1, 2197, 'thai nguyen', 'Thanh toán khi nhận hàng', '', '2022-06-30 17:13:08', '2022-06-30 17:13:08'),
+('hung', 174, 'Hung', 'vyvanhung2882001bg@gmail.com', 976486532, 1, 22682, 'luc ngan', 'Thanh toán khi nhận hàng', 'Ghi chu', '2022-06-30 17:19:07', '2022-06-30 17:19:07');
 
 -- --------------------------------------------------------
 
@@ -255,20 +156,20 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `type`, `image`, `price`, `quantity`, `description`, `status`, `created_at`, `updated_at`, `view`, `sold`) VALUES
-(59, 'iPhone 11 64GB', 1, 'iphone-11-pro-hai-phong-01.jpg', 899, 200, 'Apple iPhone 11 is powered by the Apple A13 Bionic processor. The smartphone comes with a 6.1 inches Liquid Retina IPS LCD capacitive touchscreen and 828 x 1792 pixels resolution. The screen of the device is protected by Scratch-resistant glass and oleophobic coating.\r\n\r\nThe rear camera consists of a 12 MP (wide) + 12 MP (ultrawide) lenses.\r\n\r\nThe front camera has a 12 MP + TOF 3D camera sensor. The phone’s sensors include Face ID, accelerometer, gyro, proximity, compass, and barometer.\r\n\r\nThe smartphone is fueled by a Non-removable Li-Ion 3110 mAh battery + Fast battery charging 18W: 50% in 30 min + USB Power Delivery 2.0 + Qi wireless charging.\r\n\r\nThe phone runs on iOS 13.\r\n\r\nThe Apple iPhone 11 comes in different colors like, Black, Green, Yellow, Purple, Red, and White. It features 2.0, proprietary reversible connector.', 1, '2020-10-19 08:59:28', '0000-00-00 00:00:00', 0, 0),
-(60, 'Iphone 11 Pro Max', 1, '637037687763926758_11-pro-max-xanh.png', 1099, 200, 'Apple iPhone 11 Pro Max is powered by the Apple A13 Bionic processor. The smartphone comes with a 6.5 inches Super Retina XDR OLED capacitive touchscreen and 1242 x 2688 pixels resolution. The screen of the device is protected by Scratch-resistant glass and oleophobic coating.\r\n\r\nThe rear camera consists of a 12 MP (wide) + 12 MP (telephoto) 2x optical zoom + 12 MP (ultrawide) lenses.\r\n\r\nThe front camera has a 12 MP + TOF 3D camera sensor. The phone’s sensors include Face ID, accelerometer, gyro, proximity, compass, and barometer.\r\n\r\nThe smartphone is fueled by a Non-removable Li-Ion 3500 mAh battery + Fast battery charging 18W: 50% in 30 min + USB Power Delivery 2.0 + Qi wireless charging.\r\n\r\nThe phone runs on iOS 13.\r\n\r\nThe Apple iPhone 11 Pro Max comes in different colors like, Space Gray, Silver, Gold, and Midnight Green. It features 2.0, proprietary reversible connector.', 1, '2020-10-19 09:04:49', '0000-00-00 00:00:00', 1, 0),
-(61, 'iPhone 12', 1, 'iPhone-12-concept-conceptes-iphone.jpg', 1599, 200, 'Apple iPhone 12 was officially released on October 13, 2020.\r\n\r\nThe phone is powered by the new Apple A14 Bionic processor. The smartphone comes with a 6.1 inches Super Retina XDR OLED capacitive touchscreen, 1170 x 2532 pixels resolution and HDR10 display, Wide color gamut, Dolby Vision, and True-tone.\r\n\r\nAdditionally, the screen of the device is protected by Scratch-resistant glass and oleophobic coating. The rear camera consists of 12 MP (wide) + 12 MP (ultrawide) with Quad-LED dual-tone flash, and HDR (photo/panorama).\r\n\r\nThe front camera consists of 12 MP (wide) + SL 3D, (depth/biometrics sensor) with HDR. The phone’s sensors include Face ID, accelerometer, gyro, proximity, compass, barometer + Siri natural language commands, and dictation.\r\n\r\nThe smartphone is fueled by a non-removable Li-Ion battery + Fast charging 18W, 50% in 30 min (advertised) + USB Power Delivery 2.0 + Qi fast wireless charging 15W. The phone runs on the iOS 14 operating system.\r\n\r\nThe Apple iPhone 12 comes in different colors like Black, White, Red, Green, and Blue. The dimension of the smartphone is 146.7 x 71.5 x 7.4 mm and it weighs 164 grams. It is IP68 dust/water resistant and supports Single SIM (Nano-SIM and/or eSIM)', 1, '2020-10-19 09:13:02', '2020-10-19 09:50:35', 1, 0),
-(62, 'iPhone X', 1, 'iphone-x-1-min-compressor.jpg', 599, 0, 'iPhone X Release\r\nThe Apple iPhone X was officially announced on September 12th 2017 at Steve Job’s Theater, Apple Campus II. The smartphone is available for pre-order on September 15th and available on September 22nd.\r\n\r\nDevice Characteristics\r\nThe iPhone X feature Apple’s first attempt at an all-screen smartphone covering the majority of the device’s footprint. The display reserves space on the top rig to accommodate the front-facing camera that functions as a facial-scanner that unlocks the device when a registered face is detected; this function is named “FaceID”.\r\n\r\nApple have removed the TouchID sensor completely providing the “all-screen” experience. The screen is Apple’s largest smartphone display, at 5.8-inches, with an 18:9 screen ratio. The screen also features an OLED HDR display with a pixel density of 458 ppi, this display is Apple’s first OLED device and also highest pixel density.\r\n\r\nThe dual-camera setup has been re-orientated to a vertical layout, the components are a near-replica of the iPhone 8, the major difference being a dual optical image stabilisation support of the iPhone X instead of a single on the other. The device comes with a 7-megapixel camera that features Apple’s Portrait mode and Animoji.', 1, '2020-10-19 09:16:50', '2020-10-19 09:52:02', 1, 0),
-(63, 'iPhone XS Max', 1, 'xs-max-trang-cd80a8a5-8d7c-42ec-9e1d-eafee23470a4.png', 799, 200, 'iPhone XS Max Release\r\nThe Apple iPhone X was officially announced on September 12th 2017 at Steve Job’s Theater, Apple Campus II. The smartphone is available for pre-order on September 15th and available on September 22nd.\r\n\r\nDevice Characteristics\r\nThe iPhone X feature Apple’s first attempt at an all-screen smartphone covering the majority of the device’s footprint. The display reserves space on the top rig to accommodate the front-facing camera that functions as a facial-scanner that unlocks the device when a registered face is detected; this function is named “FaceID”.\r\n\r\nApple have removed the TouchID sensor completely providing the “all-screen” experience. The screen is Apple’s largest smartphone display, at 5.8-inches, with an 18:9 screen ratio. The screen also features an OLED HDR display with a pixel density of 458 ppi, this display is Apple’s first OLED device and also highest pixel density.\r\n\r\nThe dual-camera setup has been re-orientated to a vertical layout, the components are a near-replica of the iPhone 8, the major difference being a dual optical image stabilisation support of the iPhone X instead of a single on the other. The device comes with a 7-megapixel camera that features Apple’s Portrait mode and Animoji.', 1, '2020-10-19 09:20:21', '0000-00-00 00:00:00', 0, 0),
-(64, 'iPhone 8 Plus', 1, 'iphone-8-plus-red_0ef9f18c7adc499a82af3cdbc45b9ecc_grande.jpg', 499, 198, 'iPhone 8 Plus Release\r\nThe Apple iPhone 8 Plus was officially announced on September 12th 2017 at Steve Job’s Theater, Apple Campus II. The smartphone is available for pre-order on September 15th and available on September 22nd.\r\n\r\nThe iPhone 8 and iPhone X were also announced on the same day.', 1, '2020-10-19 09:24:10', '0000-00-00 00:00:00', 0, 2),
-(65, 'iPhone 7 Plus', 1, '10035346-dien-thoai-iphone-7-plus-128gb-black-1.jpg', 399, 200, 'Video Playback of iphone 7 plus\r\nH.264 video up to 4K, 30 frames per second, High Profile level 4.2 with AAC‑LC audio up to 160 Kbps, 48kHz, stereo audio or Dolby Audio up to 1008 Kbps, 48kHz, stereo or multichannel audio, in .m4v, .mp4, and .mov file formats; MPEG‑4 video up to 2.5 Mbps, 640 by 480 pixels, 30 frames per second, Simple Profile with AAC‑LC audio up to 160 Kbps per channel, 48kHz, stereo audio or Dolby Audio up to 1008 Kbps, 48kHz, stereo or multichannel audio, in .m4v, .mp4, and .mov file formats; Motion JPEG (M‑JPEG) up to 35 Mbps, 1280 by 720 pixels, 30 frames per second, audio in ulaw, PCM stereo audio in .avi file format', 1, '2020-10-19 09:26:42', '0000-00-00 00:00:00', 0, 0),
-(66, 'iPad Air 4', 2, 'air_2_silver_master.jpg', 2099, 91, 'Apple iPad Air (2019) is the product launched by Apple quietly which is 10.5 inches. The device is launched in the month of March 2019.\r\n\r\nApple iPad Air (2019) works with the Pencil released by Apple. The new tablet is all set to boost the performance by 70 percent compared to its predecessor.\r\n\r\nThe device is powered by Apple A12 Bionic APL1W81 processor and the display comes with additional features like Retina display, True Tone display, 500 cd/m², Antireflective coating, Oleophobic (lipophobic) coating, and Wide Color display (P3).\r\n\r\nThe Apple iPad Air (2019) is pack with 2 GB RAM and 64GB and 256 GB of internal storage. The screen of the phone is using the technology of IPS which great.\r\n\r\nThe tablet has a big screen  10.5 inches that give a resolution of 1920 x 1080 pixels, 24 bit. The pixel density is 324 PPI (pixels per inch).\r\n\r\nThe phone is fueled with Li-Polymer battery capacity which is Non-removable. The Apple iPad Air (2019) runs on iOS 12 operating system.\r\n\r\nThe dimension of the tablet is 250.6 x 174.1 x 6.1 mm and 464 grams with battery. The model alias is iPad mini (2019). The body of the tablet is made out of Aluminium alloy.', 1, '2020-10-19 09:30:10', '2022-05-18 11:32:31', 0, 9),
-(67, 'iPad Pro 2021', 2, 'ipad-pro-12-select-wifi-silver-202003_FMT_WHH.png', 3000, 100, 'Apple iPad Pro 11 (2021) is officially announced on April 20, 2021.\r\n\r\nThe tablet is enabled with sensors such as Face ID, accelerometer, gyro, proximity, barometer along with Siri natural language commands and dictation.\r\n\r\nThe device is powered by the Apple M1 Octa-core processor and runs on iPad 14.5 operating system. The device is pack with various internal storage options such as 128 GB, 256 GB, 512 GB, 1 TB, and 2 TB while it has 8 GB and 16 GB RAM.\r\n\r\nThe size of the tablet is 11 inches that provide a resolution of 1668 x 2388 pixels. The screen of the tablet is using the technology of Liquid Retina IPS LCD and protected by Scratch-resistant glass and oleophobic coating.\r\n\r\nThe phone is fueled with a non-removable Li-Po 7538 mAh (28.65 Wh) + Fast charging 18W. The Apple iPad Pro 11 (2021) comes in a dimension of 247.6 x 178.5 x 5.9 mm and weighs 466 grams.\r\n\r\nThe body of the tablet is made out of a glass front, aluminum back, and aluminum frame. It supports Nano-SIM and eSIM along with Stylus support (Bluetooth integration; magnetic).', 1, '2020-10-19 09:32:58', '0000-00-00 00:00:00', 0, 0),
-(68, 'iPad Mini 2021', 2, '34921_ipad_mini_5_gold_1.png', 1299, 95, 'Apple iPad mini (2021) is officially announced on Sept. 14, 2021.\r\n\r\nThe tablet is powered by an Apple A15 Bionic Hexa-core processor and Apple GPU (5-core) GPU. The dimension of the tablet is 195.4 x 134.8 x 6.3 mm and it weighs 293 grams.\r\n\r\nThe device is built with a glass front, aluminum back, and aluminum frame. It supports Nano-SIM, eSIM, Stylus support (2nd gen only).\r\n\r\nThe display size of the tablet is 8.3 inches Liquid Retina IPS LCD and the resolution is 1488 x 2266 pixels. The screen is protected by Scratch-resistant glass, oleophobic coating and comes with a Wide color gamut and True-tone.\r\n\r\nIt runs on the iPadOS 15 operating system and is packed with 4 GB RAM. As for internal storage, it comes in two options: 64 GB and 256 GB. The camera features 12 MP (wide) on the rear side while on the front, there is a single camera: 12 MP (ultrawide).\r\n\r\nThe sensors include Fingerprint (side-mounted), accelerometer, gyro, compass, barometer, and Siri natural language commands and dictation. The device comes in Space Gray, Pink, Purple, and Starlight.', 1, '2020-10-19 09:36:02', '2022-05-18 11:32:31', 1, 5),
-(69, 'Macbook Pro', 3, '01.jpg', 3499, 98, 'MacBook Pro and the Environment\r\nThe 13-inch MacBook Pro is designed with the following features to reduce its environmental impact:5\r\nSee the 13-inch MacBook Pro Product Environmental Report\r\n\r\nMade with better materials\r\n100% recycled tin in the solder of the main logic board\r\nEnclosure made with recyclable, low‑carbon aluminum\r\n35% or more recycled plastic in multiple components\r\nEnergy efficient\r\nENERGY STAR® certified6\r\nSmarter chemistry7\r\nArsenic-free display glass\r\nMercury-free\r\nBFR-, PVC-, and beryllium-free\r\nGreen manufacturing\r\nApple’s Zero Waste Program helps suppliers eliminate waste sent to landfill\r\nAll final assembly supplier sites are transitioning to 100% renewable energy for Apple production\r\nResponsible packaging\r\n100% of virgin wood fiber comes from responsibly managed forests\r\nRecyclable, majority-fiber packaging', 1, '2020-10-19 09:40:25', '0000-00-00 00:00:00', 0, 2),
-(70, 'Macbook Air', 3, 'Macbook-Air-2020-MWTL2-MWTJ2_fmcw-b3.png', 3599, 100, 'Should You Buy the MacBook Air?\r\nThe MacBook Air was among the first of Apple\'s Macs to make the transition to Apple silicon, featuring significantly improved performance and battery life in a slim, fanless design. Announced in November of 2020, the MacBook Air is now over a year old, with a new model being expected to arrive later this year.\r\n\r\nApple has updated the MacBook Air erratically in recent years, releasing two new models in 2020 and with no clear pattern prior to that, although the device has been updated every year since 2017. Now that Apple controls its own custom silicon for the MacBook Air, as opposed to using Intel processors, it is likely that the MacBook Air will see updates on a more regular basis in years to come.\r\nThere have been clear signs that an updated MacBook Air with a number of upgrades and improvements is on the way, and rumors suggest that the model will arrive in mid to late 2022.\r\n\r\nUpdated MacBook Air models are believed to be just months away, meaning that it is only advisable to buy a MacBook Air if you urgently need a new machine. For most people, it will likely be better to wait until new models arrive, especially as the next-generation model is shaping up to be a significant upgrade.\r\n\r\nWhile the MacBook Air seems to be the best Apple laptop for portability and price, users who require slightly better performance and battery life, as well as the Touch Bar, should consider the M1 MacBook Pro, which starts at $1,299.\r\n', 1, '2020-10-19 09:44:02', '0000-00-00 00:00:00', 0, 0),
-(71, 'AirPods Pro', 4, 'MWP22.jpg', 499, 496, 'The Apple AirPods Pro comes with active noise cancellation for immersive sound. It provides quick access to Siri by saying “Hey Siri”.\r\n\r\nThe Wireless Charging Case delivers more than 24 hours of battery life and the Transparency mode for hearing and connecting with the world around you.\r\n\r\nApple AirPods Pro is easily one of the best wire-free headphones for iOS owners. Unlike other AirPods, the pro version is water-resistant as it comes with an IPX4 rating that makes you worry less about breaking them because of your sweat.', 1, '2020-10-19 09:46:46', '2020-10-19 09:50:06', 1, 4),
-(72, 'AirPods 2', 4, 'tai-nghe-bluetooth-airpods-2-apple-mv7n2-trang-avatar-1-600x600.jpg', 299, 500, 'The Apple AirPods 2 (with charging case) are equipped with the new Apple H1 headphone chip. Whether you use AirPods with both ears or only one of them, the H1 chip can automatically transmit audio and activate the microphone.', 1, '2020-10-19 09:49:29', '0000-00-00 00:00:00', 0, 0);
+(59, 'iPhone 11 64GB', 1, 'iphone-11-pro-hai-phong-01.jpg', 899, 190, 'Apple iPhone 11 được trang bị bộ vi xử lý Apple A13 Bionic. Điện thoại thông minh đi kèm với màn hình cảm ứng điện dung IPS LCD 6.1 inch Liquid Retina và độ phân giải 828 x 1792 pixel. Màn hình của thiết bị được bảo vệ bằng kính chống xước và lớp phủ oleophobic.\r\n\r\nCamera sau bao gồm ống kính 12 MP (rộng) + 12 MP (siêu rộng).\r\n\r\nCamera trước có cảm biến camera 12 MP + TOF 3D. Các cảm biến của điện thoại bao gồm Face ID, gia tốc kế, con quay hồi chuyển, độ gần, la bàn và phong vũ biểu.\r\n\r\nĐiện thoại thông minh được cung cấp năng lượng bởi pin Li-Ion 3110 mAh không thể tháo rời + Sạc nhanh 18W: 50% trong 30 phút + USB Power Delivery 2.0 + sạc không dây Qi.\r\n\r\nĐiện thoại chạy trên iOS 13.\r\n\r\nApple iPhone 11 có các màu khác nhau như Đen, Xanh lá, Vàng, Tím, Đỏ và Trắng. Nó có tính năng 2.0, đầu nối đảo ngược độc quyền.', 1, '2020-10-19 08:59:28', '2022-06-30 17:19:07', 0, 10),
+(60, 'Iphone 11 Pro Max', 1, '637037687763926758_11-pro-max-xanh.png', 1099, 195, 'Apple iPhone 11 Pro Max được trang bị bộ vi xử lý Apple A13 Bionic. Điện thoại thông minh đi kèm với màn hình cảm ứng điện dung Super Retina XDR OLED 6,5 inch và độ phân giải 1242 x 2688 pixel. Màn hình của thiết bị được bảo vệ bằng kính chống xước và lớp phủ oleophobic.\r\n\r\nCamera sau bao gồm ống kính 12 MP (rộng) + 12 MP (tele) zoom quang học 2x + 12 MP (siêu rộng).\r\n\r\nCamera trước có cảm biến camera 12 MP + TOF 3D. Các cảm biến của điện thoại bao gồm Face ID, gia tốc kế, con quay hồi chuyển, độ gần, la bàn và phong vũ biểu.\r\n\r\nĐiện thoại thông minh được cung cấp năng lượng bởi pin Li-Ion 3.500 mAh không thể tháo rời + Sạc nhanh 18W: 50% trong 30 phút + USB Power Delivery 2.0 + sạc không dây Qi.\r\n\r\nĐiện thoại chạy trên iOS 13.\r\n\r\nApple iPhone 11 Pro Max có các màu khác nhau như Xám không gian, Bạc, Vàng và Xanh Midnight. Nó có tính năng 2.0, đầu nối đảo ngược độc quyền.', 1, '2020-10-19 09:04:49', '2022-06-30 17:19:07', 1, 5),
+(61, 'iPhone 12', 1, 'iPhone-12-concept-conceptes-iphone.jpg', 1599, 197, 'Apple iPhone 12 chính thức được phát hành vào ngày 13 tháng 10 năm 2020.\r\n\r\nĐiện thoại được trang bị bộ vi xử lý Apple A14 Bionic mới. Điện thoại thông minh đi kèm với màn hình cảm ứng điện dung Super Retina XDR OLED 6,1 inch, độ phân giải 1170 x 2532 pixel và màn hình HDR10, gam màu rộng, Dolby Vision và True-tone.\r\n\r\nNgoài ra, màn hình của thiết bị còn được bảo vệ bởi kính chống xước và lớp phủ oleophobic. Máy ảnh phía sau bao gồm 12 MP (rộng) + 12 MP (siêu rộng) với đèn flash kép Quad-LED và HDR (ảnh / toàn cảnh).\r\n\r\nMáy ảnh trước bao gồm 12 MP (rộng) + SL 3D, (cảm biến độ sâu / sinh trắc học) với HDR. Các cảm biến của điện thoại bao gồm Face ID, gia tốc kế, con quay hồi chuyển, độ gần, la bàn, phong vũ biểu + lệnh ngôn ngữ tự nhiên Siri và đọc chính tả.\r\n\r\nĐiện thoại thông minh được cung cấp năng lượng bởi pin Li-Ion không thể tháo rời + Sạc nhanh 18W, 50% trong 30 phút (được quảng cáo) + USB Power Delivery 2.0 + Sạc không dây nhanh Qi 15W. Điện thoại chạy trên hệ điều hành iOS 14.\r\n\r\nApple iPhone 12 có nhiều màu sắc khác nhau như Đen, Trắng, Đỏ, Xanh lục và Xanh lam. Kích thước của điện thoại là 146,7 x 71,5 x 7,4 mm và nặng 164 gram. Nó có khả năng chống bụi / nước IP68 và hỗ trợ một SIM (Nano-SIM và / hoặc eSIM)', 1, '2020-10-19 09:13:02', '2022-06-30 17:19:07', 1, 3),
+(62, 'iPhone X', 1, 'iphone-x-1-min-compressor.jpg', 599, -1, 'iPhone X phát hành\r\nApple iPhone X đã chính thức được công bố vào ngày 12 tháng 9 năm 2017 tại Steve Job’s Theater, Apple Campus II. Điện thoại thông minh có sẵn để đặt hàng trước vào ngày 15 tháng 9 và có sẵn vào ngày 22 tháng 9.\r\n\r\nĐặc điểm thiết bị\r\nIPhone X giới thiệu nỗ lực đầu tiên của Apple đối với một điện thoại thông minh toàn màn hình bao phủ phần lớn diện tích của thiết bị. Màn hình dành không gian trên giàn trên cùng để chứa máy ảnh mặt trước có chức năng như một máy quét khuôn mặt mở khóa thiết bị khi nhận diện được khuôn mặt đã đăng ký; chức năng này được đặt tên là “FaceID”.\r\n\r\nApple đã loại bỏ hoàn toàn cảm biến TouchID để mang lại trải nghiệm “toàn màn hình”. Màn hình này là màn hình điện thoại thông minh lớn nhất của Apple, với kích thước 5,8 inch, với tỷ lệ màn hình 18: 9. Màn hình này cũng có màn hình OLED HDR với mật độ điểm ảnh 458 ppi, màn hình này là thiết bị OLED đầu tiên của Apple và cũng có mật độ điểm ảnh cao nhất.\r\n\r\nThiết lập camera kép đã được định hướng lại thành bố cục dọc, các thành phần gần giống như bản sao của iPhone 8, sự khác biệt chính là hỗ trợ ổn định hình ảnh quang học kép của iPhone X thay vì một chiếc khác. Thiết bị đi kèm với một máy ảnh 7 megapixel có chế độ Chân dung của Apple và Animoji.', 1, '2020-10-19 09:16:50', '2022-06-30 17:19:07', 1, 1),
+(63, 'iPhone XS Max', 1, 'xs-max-trang-cd80a8a5-8d7c-42ec-9e1d-eafee23470a4.png', 799, 192, 'Bản phát hành iPhone XS Max\r\nApple iPhone X đã chính thức được công bố vào ngày 12 tháng 9 năm 2017 tại Steve Job’s Theater, Apple Campus II. Điện thoại thông minh có sẵn để đặt hàng trước vào ngày 15 tháng 9 và có sẵn vào ngày 22 tháng 9.\r\n\r\nĐặc điểm thiết bị\r\nIPhone X giới thiệu nỗ lực đầu tiên của Apple đối với một điện thoại thông minh toàn màn hình bao phủ phần lớn diện tích của thiết bị. Màn hình dành không gian trên giàn trên cùng để chứa máy ảnh mặt trước có chức năng như một máy quét khuôn mặt mở khóa thiết bị khi nhận diện được khuôn mặt đã đăng ký; chức năng này được đặt tên là “FaceID”.\r\n\r\nApple đã loại bỏ hoàn toàn cảm biến TouchID để mang lại trải nghiệm “toàn màn hình”. Màn hình này là màn hình điện thoại thông minh lớn nhất của Apple, với kích thước 5,8 inch, với tỷ lệ màn hình 18: 9. Màn hình này cũng có màn hình OLED HDR với mật độ điểm ảnh 458 ppi, màn hình này là thiết bị OLED đầu tiên của Apple và cũng có mật độ điểm ảnh cao nhất.\r\n\r\nThiết lập camera kép đã được định hướng lại thành bố cục dọc, các thành phần gần giống như bản sao của iPhone 8, sự khác biệt chính là hỗ trợ ổn định hình ảnh quang học kép của iPhone X thay vì một chiếc khác. Thiết bị đi kèm với một máy ảnh 7 megapixel có chế độ Chân dung của Apple và Animoji.', 1, '2020-10-19 09:20:21', '2022-06-30 17:19:07', 0, 8),
+(64, 'iPhone 8 Plus', 1, 'iphone-8-plus-red_0ef9f18c7adc499a82af3cdbc45b9ecc_grande.jpg', 499, 197, 'Bản phát hành iPhone 8 Plus\r\nApple iPhone 8 Plus đã chính thức được công bố vào ngày 12 tháng 9 năm 2017 tại Steve Job’s Theater, Apple Campus II. Điện thoại thông minh có sẵn để đặt hàng trước vào ngày 15 tháng 9 và có sẵn vào ngày 22 tháng 9.\r\n\r\nIPhone 8 và iPhone X cũng được công bố cùng ngày.', 1, '2020-10-19 09:24:10', '2022-06-30 17:19:07', 0, 3),
+(65, 'iPhone 7 Plus', 1, '10035346-dien-thoai-iphone-7-plus-128gb-black-1.jpg', 399, 200, 'Phát lại video của iphone 7 plus\r\nVideo H.264 lên đến 4K, 30 khung hình / giây, mức Cấu hình cao 4.2 với âm thanh AAC ‑ LC lên đến 160 Kbps, 48kHz, âm thanh nổi hoặc Âm thanh Dolby lên đến 1008 Kbps, 48kHz, âm thanh nổi hoặc đa kênh, ở .m4v, định dạng tệp .mp4 và .mov; Video MPEG ‑ 4 lên đến 2,5 Mbps, 640 x 480 pixel, 30 khung hình / giây, Cấu hình đơn giản với âm thanh AAC ‑ LC lên đến 160 Kbps trên mỗi kênh, 48kHz, âm thanh nổi hoặc Âm thanh Dolby lên đến 1008 Kbps, 48kHz, âm thanh nổi hoặc đa kênh âm thanh ở các định dạng tệp .m4v, .mp4 và .mov; Motion JPEG (M ‑ JPEG) lên đến 35 Mbps, 1280 x 720 pixel, 30 khung hình / giây, âm thanh ở định dạng ulaw, âm thanh nổi PCM ở định dạng tệp .avi', 1, '2020-10-19 09:26:42', '0000-00-00 00:00:00', 0, 0),
+(66, 'iPad Air 4', 2, 'air_2_silver_master.jpg', 2099, 90, 'Apple iPad Air (2019) là sản phẩm được Apple ra mắt một cách lặng lẽ với kích thước 10,5 inch. Thiết bị được ra mắt vào tháng 3 năm 2019.\r\n\r\nApple iPad Air (2019) hoạt động với Pencil do Apple phát hành. Máy tính bảng mới được thiết lập để tăng hiệu suất lên 70% so với người tiền nhiệm của nó.\r\n\r\nThiết bị được trang bị bộ vi xử lý Apple A12 Bionic APL1W81 và màn hình đi kèm với các tính năng bổ sung như màn hình Retina, màn hình True Tone, 500 cd / m², lớp phủ chống phản xạ, lớp phủ Oleophobic (lipophobic) và màn hình màu rộng (P3).\r\n\r\nApple iPad Air (2019) được trang bị RAM 2 GB và bộ nhớ trong 64 GB và 256 GB. Màn hình của điện thoại được sử dụng công nghệ IPS rất tuyệt vời.\r\n\r\nMáy tính bảng có màn hình lớn 10,5 inch cho độ phân giải 1920 x 1080 pixel, 24 bit. Mật độ điểm ảnh là 324 PPI (pixel trên inch).\r\n\r\nĐiện thoại được cung cấp năng lượng với dung lượng pin Li-Polymer không thể tháo rời. Apple iPad Air (2019) chạy trên hệ điều hành iOS 12.\r\n\r\nKích thước của máy tính bảng là 250,6 x 174,1 x 6,1 mm và 464 gram với pin. Bí danh của model là iPad mini (2019). Thân của máy tính bảng được làm bằng hợp kim nhôm.', 1, '2020-10-19 09:30:10', '2022-06-30 17:19:07', 0, 10),
+(67, 'iPad Pro 2021', 2, 'ipad-pro-12-select-wifi-silver-202003_FMT_WHH.png', 3000, 83, 'Apple iPad Pro 11 (2021) chính thức được công bố vào ngày 20 tháng 4 năm 2021.\r\n\r\nMáy tính bảng được kích hoạt với các cảm biến như Face ID, gia tốc kế, con quay hồi chuyển, độ gần, phong vũ biểu cùng với các lệnh và chính tả ngôn ngữ tự nhiên Siri.\r\n\r\nMáy được trang bị bộ vi xử lý Apple M1 Octa-core và chạy trên hệ điều hành iPad 14.5. Thiết bị có nhiều tùy chọn bộ nhớ trong khác nhau như 128 GB, 256 GB, 512 GB, 1 TB và 2 TB trong khi nó có RAM 8 GB và 16 GB.\r\n\r\nKích thước của máy tính bảng là 11 inch cung cấp độ phân giải 1668 x 2388 pixel. Màn hình của máy tính bảng sử dụng công nghệ Liquid Retina IPS LCD và được bảo vệ bằng kính chống xước và lớp phủ oleophobic.\r\n\r\nĐiện thoại được cung cấp năng lượng với Li-Po 7538 mAh (28,65 Wh) không thể tháo rời + Sạc nhanh 18W. Apple iPad Pro 11 (2021) có kích thước 247,6 x 178,5 x 5,9 mm và nặng 466 gram.\r\n\r\nPhần thân của máy tính bảng được làm bằng kính, mặt sau bằng nhôm và khung nhôm. Nó hỗ trợ Nano-SIM và eSIM cùng với hỗ trợ bút cảm ứng (tích hợp Bluetooth; từ tính).', 1, '2020-10-19 09:32:58', '2022-06-30 17:19:07', 0, 17),
+(68, 'iPad Mini 2021', 2, '34921_ipad_mini_5_gold_1.png', 1299, 95, 'Apple iPad mini (2021) chính thức được công bố vào ngày 14 tháng 9 năm 2021.\r\n\r\nMáy tính bảng này được trang bị bộ vi xử lý Apple A15 Bionic Hexa-core và GPU Apple GPU (5 lõi). Kích thước của máy tính bảng là 195,4 x 134,8 x 6,3 mm và nặng 293 gram.\r\n\r\nThiết bị được xây dựng với mặt trước bằng kính, mặt sau bằng nhôm và khung nhôm. Nó hỗ trợ Nano-SIM, eSIM, hỗ trợ bút cảm ứng (chỉ thế hệ thứ 2).\r\n\r\nKích thước màn hình của máy tính bảng là 8,3 inch Liquid Retina IPS LCD và độ phân giải là 1488 x 2266 pixel. Màn hình được bảo vệ bởi kính chống xước, lớp phủ oleophobic và có gam màu rộng và tông màu trung thực.\r\n\r\nNó chạy trên hệ điều hành iPadOS 15 và được đóng gói với RAM 4 GB. Đối với bộ nhớ trong, nó có hai tùy chọn: 64 GB và 256 GB. Máy ảnh có 12 MP (rộng) ở phía sau trong khi ở mặt trước, có một máy ảnh duy nhất: 12 MP (cực rộng).\r\n\r\nCác cảm biến bao gồm Vân tay (gắn bên), gia tốc kế, con quay hồi chuyển, la bàn, phong vũ biểu và các lệnh và chính tả bằng ngôn ngữ tự nhiên Siri. Thiết bị có các màu Xám không gian, Hồng, Tím và Ánh sao.', 1, '2020-10-19 09:36:02', '2022-05-18 11:32:31', 1, 5),
+(69, 'Macbook Pro', 3, '01.jpg', 3499, 98, 'MacBook Pro và môi trường\r\nMacBook Pro 13 inch được thiết kế với các tính năng sau để giảm tác động môi trường của nó: 5\r\nXem Báo cáo Môi trường Sản phẩm MacBook Pro 13 inch\r\n\r\nĐược làm bằng vật liệu tốt hơn\r\n100% thiếc tái chế trong hàn của bảng logic chính\r\nVỏ được làm bằng nhôm carbon thấp có thể tái chế\r\n35% hoặc nhiều hơn nhựa tái chế trong nhiều thành phần\r\nTiết kiệm năng lượng\r\nChứng nhận ENERGY STAR®6\r\nHóa học thông minh hơn7\r\nKính hiển thị không chứa thạch tín\r\nKhông chứa thủy ngân\r\nBFR-, PVC- và không chứa berili\r\nSản xuất xanh\r\nApple’s Zero Waste Program giúp các nhà cung cấp loại bỏ rác thải được đưa đến bãi chôn lấp\r\nTất cả các địa điểm cung cấp lắp ráp cuối cùng đang chuyển sang sử dụng 100% năng lượng tái tạo cho sản xuất của Apple\r\nĐóng gói có trách nhiệm\r\n100% sợi gỗ nguyên sinh đến từ các khu rừng được quản lý có trách nhiệm\r\nBao bì đa số, có thể tái chế', 1, '2020-10-19 09:40:25', '0000-00-00 00:00:00', 0, 2),
+(70, 'Macbook Air', 3, 'Macbook-Air-2020-MWTL2-MWTJ2_fmcw-b3.png', 3599, 100, 'Bạn có nên mua MacBook Air?\r\nMacBook Air là một trong những máy Mac đầu tiên của Apple chuyển đổi sang Apple silicon, có hiệu suất và tuổi thọ pin được cải thiện đáng kể trong một thiết kế mỏng, không quạt. Được công bố vào tháng 11 năm 2020, MacBook Air hiện đã hơn một năm tuổi, với một mô hình mới dự kiến ​​sẽ ra mắt vào cuối năm nay.\r\n\r\nApple đã cập nhật MacBook Air một cách thất thường trong những năm gần đây, phát hành hai mẫu mới vào năm 2020 và không có mẫu rõ ràng nào trước đó, mặc dù thiết bị đã được cập nhật hàng năm kể từ năm 2017. Giờ đây, Apple đã kiểm soát silicon tùy chỉnh của riêng mình cho MacBook Air, Trái ngược với việc sử dụng bộ vi xử lý Intel, có khả năng MacBook Air sẽ thấy các bản cập nhật thường xuyên hơn trong những năm tới.\r\nĐã có những dấu hiệu rõ ràng cho thấy một chiếc MacBook Air được cập nhật với một số nâng cấp và cải tiến đang được tung ra thị trường và các tin đồn cho thấy mẫu máy này sẽ ra mắt vào giữa đến cuối năm 2022.\r\n\r\nCác mẫu MacBook Air cập nhật được cho là sẽ chỉ còn vài tháng nữa, có nghĩa là bạn chỉ nên mua MacBook Air nếu bạn cần gấp một chiếc máy mới. Đối với hầu hết mọi người, tốt hơn là nên đợi cho đến khi các mô hình mới xuất hiện, đặc biệt là khi mô hình thế hệ tiếp theo được định hình là một bản nâng cấp đáng kể.\r\n\r\nMặc dù MacBook Air có vẻ là máy tính xách tay tốt nhất của Apple về tính di động và giá cả, nhưng những người dùng yêu cầu hiệu suất và thời lượng pin tốt hơn một chút, cũng như Touch Bar, nên xem xét MacBook Pro M1, có giá khởi điểm 1.299 USD.', 1, '2020-10-19 09:44:02', '0000-00-00 00:00:00', 0, 0),
+(71, 'AirPods Pro', 4, 'MWP22.jpg', 499, 495, 'Apple AirPods Pro đi kèm với tính năng khử tiếng ồn chủ động cho âm thanh đắm chìm. Nó cung cấp khả năng truy cập nhanh vào Siri bằng cách nói “Hey Siri”.\r\n\r\nHộp sạc không dây mang lại thời lượng pin hơn 24 giờ và chế độ Trong suốt để nghe và kết nối với thế giới xung quanh bạn.\r\n\r\nApple AirPods Pro dễ dàng trở thành một trong những tai nghe không dây tốt nhất cho chủ sở hữu iOS. Không giống như các AirPods khác, phiên bản chuyên nghiệp có khả năng chống nước vì nó đi kèm với xếp hạng IPX4, giúp bạn bớt lo lắng về việc làm vỡ chúng do mồ hôi của bạn.', 1, '2020-10-19 09:46:46', '2022-06-30 17:13:08', 1, 5),
+(72, 'AirPods 2', 4, 'tai-nghe-bluetooth-airpods-2-apple-mv7n2-trang-avatar-1-600x600.jpg', 299, 500, 'Apple AirPods 2 (có hộp sạc) được trang bị chip tai nghe Apple H1 mới. Cho dù bạn sử dụng AirPods bằng cả hai tai hay chỉ một trong hai tai, chip H1 có thể tự động truyền âm thanh và kích hoạt micrô.', 1, '2020-10-19 09:49:29', '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -353,25 +254,25 @@ INSERT INTO `product_images` (`id`, `id_product`, `url`) VALUES
 CREATE TABLE `product_information` (
   `id` int(11) NOT NULL,
   `id_product` int(11) NOT NULL,
-  `display` varchar(256) DEFAULT 'Không' COMMENT 'Màn hình',
-  `operating_system` varchar(256) DEFAULT 'Không' COMMENT 'Hệ điều hành',
-  `front_camera` varchar(256) DEFAULT 'Không' COMMENT 'Cam trước',
-  `rear_camera` varchar(256) DEFAULT 'Không' COMMENT 'Cam sau',
-  `cpu` varchar(256) DEFAULT 'Không' COMMENT 'CPU',
-  `ram` varchar(256) DEFAULT 'Không' COMMENT 'RAM',
-  `rom` varchar(256) DEFAULT 'Không' COMMENT 'ROM',
-  `battery` varchar(256) DEFAULT 'Không' COMMENT 'Pin',
-  `security` varchar(256) DEFAULT 'Không' COMMENT 'Bảo mật',
-  `charging_port` varchar(256) DEFAULT 'Không' COMMENT 'Cổng sạc',
-  `compatible` varchar(256) DEFAULT 'Không' COMMENT 'Tương thích',
-  `sound_technology` varchar(256) DEFAULT 'Không' COMMENT 'Công nghệ âm thnah',
-  `used_time` varchar(256) DEFAULT 'Không' COMMENT 'Thời gian sử dụng',
-  `connect` varchar(256) DEFAULT 'Không' COMMENT 'Kết nối',
-  `weight` varchar(256) DEFAULT 'Không' COMMENT 'Trọng lượng',
-  `brand` varchar(256) DEFAULT 'Apple' COMMENT 'Thương hiệu',
-  `made_in` varchar(256) DEFAULT 'Chưa có thông tin' COMMENT 'Sản xuất tại',
-  `hard_drive` varchar(256) DEFAULT 'Chưa có thông tin' COMMENT 'Ổ cứng',
-  `graphic_card` varchar(256) DEFAULT 'Chưa có thông tin' COMMENT 'Card đồ hoạ'
+  `display` varchar(256) DEFAULT '0' COMMENT 'Màn hình',
+  `operating_system` varchar(256) DEFAULT '0' COMMENT 'Hệ điều hành',
+  `front_camera` varchar(256) DEFAULT '0' COMMENT 'Cam trước',
+  `rear_camera` varchar(256) DEFAULT '0' COMMENT 'Cam sau',
+  `cpu` varchar(256) DEFAULT '0' COMMENT 'CPU',
+  `ram` varchar(256) DEFAULT '0' COMMENT 'RAM',
+  `rom` varchar(256) DEFAULT '0' COMMENT 'ROM',
+  `battery` varchar(256) DEFAULT '0' COMMENT 'Pin',
+  `security` varchar(256) DEFAULT '0' COMMENT 'Bảo mật',
+  `charging_port` varchar(256) DEFAULT '0' COMMENT 'Cổng sạc',
+  `compatible` varchar(256) DEFAULT '0' COMMENT 'Tương thích',
+  `sound_technology` varchar(256) DEFAULT '0' COMMENT 'Công nghệ âm thnah',
+  `used_time` varchar(256) DEFAULT '0' COMMENT 'Thời gian sử dụng',
+  `connect` varchar(256) DEFAULT '0' COMMENT 'Kết nối',
+  `weight` varchar(256) DEFAULT '0' COMMENT 'Trọng lượng',
+  `brand` varchar(256) DEFAULT '0' COMMENT 'Thương hiệu',
+  `made_in` varchar(256) DEFAULT '0' COMMENT 'Sản xuất tại',
+  `hard_drive` varchar(256) DEFAULT '0' COMMENT 'Ổ cứng',
+  `graphic_card` varchar(256) DEFAULT '0' COMMENT 'Card đồ hoạ'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -393,24 +294,6 @@ INSERT INTO `product_information` (`id`, `id_product`, `display`, `operating_sys
 (12, 70, '13.3\" Retina', 'Mac OS', '12', '0', 'Intel Core i5 10th', '8GB LPDDR4X', '0', '15000', '0', 'Lightning', '0', '0', '0', '2 x USB-C', '1.29Kg', '0', '0', 'SSD 256GB', 'Intel Iris Plus Graphics'),
 (13, 71, '0', '0', '0', '0', '0', '0', '0', '5000', '0', 'Lightning', 'MacOS, iOS', 'Active Noise Cancelling', '4.5h', '1 device', '0', '0', '0', '0', '0'),
 (14, 72, '0', '0', '0', '0', '0', '0', '0', '3000 mAh', '0', 'Lightning', 'Android, iOS', 'Active Noise Pro', '5h', '1 device', '0', '0', '0', '0', '0');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `site_mail`
---
-
-CREATE TABLE `site_mail` (
-  `username` varchar(256) NOT NULL,
-  `password` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `site_mail`
---
-
-INSERT INTO `site_mail` (`username`, `password`) VALUES
-('test.khanhnhu25@gmail.com', 'Test44448888');
 
 -- --------------------------------------------------------
 
@@ -441,7 +324,8 @@ INSERT INTO `user` (`id`, `username`, `fullname`, `email`, `password`, `lv`, `st
 (7, 'Nhu', 'Như', 'nhu@gmail.com', 'nhu123456', 15, 1, '2020-09-12 11:51:17', '2020-10-12 14:32:11'),
 (8, 'nhu123', 'nhu', 'nhu123@gmail.com', '123456789', 15, 1, '2020-09-25 02:41:12', '2020-10-12 14:32:47'),
 (9, 'khanhnhu123', 'Nhu', 'luongvannhu2512@gmail.com', 'khanhnhu2', 15, 1, '2020-09-29 09:25:02', '2020-10-12 14:33:10'),
-(10, 'hyung', 'Lê Việt Hưng', 'viethung4869@gmail.com', '$2y$10$BY79FF9bdNbOjEOKSTxcdeQL1DSWBq1CF1bTWDVLN/wL/m3g.7iTm', 100, 1, '2022-05-17 15:41:57', '2022-05-17 15:41:57');
+(10, 'hyung', 'Lê Việt Hưng', 'viethung4869@gmail.com', '$2y$10$BY79FF9bdNbOjEOKSTxcdeQL1DSWBq1CF1bTWDVLN/wL/m3g.7iTm', 100, 1, '2022-05-17 15:41:57', '2022-05-17 15:41:57'),
+(11, 'hung', 'Vy Hùng', 'vyvanhung2882001bg@gmail.com', '$2y$10$n6CLXmfDz.tSEode/IhO0.DIyOM8kPmTMdxIq.hiOMssOTJzZstwy', 1, 1, '2022-05-23 14:58:55', '2022-05-23 14:58:55');
 
 -- --------------------------------------------------------
 
@@ -463,38 +347,6 @@ INSERT INTO `user_level` (`id_lv`, `name`) VALUES
 (15, 'Staff'),
 (100, 'Customers');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user_permissions`
---
-
-CREATE TABLE `user_permissions` (
-  `id_lv` int(11) NOT NULL,
-  `dashboard` int(11) NOT NULL,
-  `product_see` int(11) NOT NULL,
-  `product_add` int(11) NOT NULL,
-  `product_edit` int(11) NOT NULL,
-  `product_delete` int(11) NOT NULL,
-  `order_see` int(11) NOT NULL,
-  `order_confirm` int(11) NOT NULL,
-  `order_delete` int(11) NOT NULL,
-  `user_see` int(11) NOT NULL,
-  `user_edit` int(11) NOT NULL,
-  `permission` int(11) NOT NULL,
-  `notifications` int(11) NOT NULL,
-  `management` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user_permissions`
---
-
-INSERT INTO `user_permissions` (`id_lv`, `dashboard`, `product_see`, `product_add`, `product_edit`, `product_delete`, `order_see`, `order_confirm`, `order_delete`, `user_see`, `user_edit`, `permission`, `notifications`, `management`) VALUES
-(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-(15, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0),
-(100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-
 --
 -- Indexes for dumped tables
 --
@@ -506,17 +358,9 @@ ALTER TABLE `management_image_banner`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `notifications`
---
-ALTER TABLE `notifications`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `notifications_ibfk_1` (`lv`);
-
---
 -- Indexes for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `order_detail_ibfk_1` (`id_order`),
   ADD KEY `order_detail_ibfk_2` (`id_product`);
 
@@ -569,12 +413,6 @@ ALTER TABLE `user_level`
   ADD PRIMARY KEY (`id_lv`);
 
 --
--- Indexes for table `user_permissions`
---
-ALTER TABLE `user_permissions`
-  ADD PRIMARY KEY (`id_lv`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -585,28 +423,16 @@ ALTER TABLE `management_image_banner`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `notifications`
---
-ALTER TABLE `notifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- AUTO_INCREMENT for table `order_detail`
---
-ALTER TABLE `order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
-
---
 -- AUTO_INCREMENT for table `order_list`
 --
 ALTER TABLE `order_list`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `product_category`
@@ -618,19 +444,19 @@ ALTER TABLE `product_category`
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `product_information`
 --
 ALTER TABLE `product_information`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `user_level`
@@ -641,12 +467,6 @@ ALTER TABLE `user_level`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `notifications`
---
-ALTER TABLE `notifications`
-  ADD CONSTRAINT `notifications_ibfk_1` FOREIGN KEY (`lv`) REFERENCES `user_level` (`id_lv`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `order_detail`
@@ -672,12 +492,6 @@ ALTER TABLE `product_images`
 --
 ALTER TABLE `product_information`
   ADD CONSTRAINT `produtc_productinfor` FOREIGN KEY (`id_product`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `user_permissions`
---
-ALTER TABLE `user_permissions`
-  ADD CONSTRAINT `user_permissions_ibfk_1` FOREIGN KEY (`id_lv`) REFERENCES `user_level` (`id_lv`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

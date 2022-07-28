@@ -5,21 +5,7 @@
 
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v1</li>
-                        </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div>
+        
         <!-- /.content-header -->
 
         <!-- Main content -->
@@ -29,7 +15,7 @@
                     <div class="col-md-6">
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">New Product</h3>
+                                <h3 class="card-title">Sản phẩm mới</h3>
 
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -41,15 +27,15 @@
                                 @csrf
                                 <div class="card-body">
                                     <div class="form-group">
-                                        <label for="inputName">Product Name</label>
+                                        <label for="inputName">Tên sản phẩm</label>
                                         <input required type="text" name="name" class="form-control">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputDescription">Product Description</label>
+                                        <label for="inputDescription">Mô tả</label>
                                         <textarea  name="description" class="form-control" rows="4"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="type">Product Category</label>
+                                        <label for="type">Loại sản phẩm</label>
                                         <select name="type" class="form-control custom-select">
                                         @foreach($categories as $category)
 {{--                                                <option selected="" disabled="">Select one</option>--}}
@@ -58,35 +44,35 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputClientCompany">Product Price</label>
+                                        <label for="inputClientCompany">Giá sản phẩm</label>
                                         <input required type="number" min="0" name="price" class="form-control">
                                     </div>
 
 
                                     <div class="form-group">
-                                        <label for="inputProductQuantity">Project Quantity</label>
+                                        <label for="inputProductQuantity">Số lượng</label>
                                         <input required type="number" min="0" name="quantity" class="form-control">
                                     </div>
 
 {{--                                    atribute of table product infor--}}
 
                                     <div class="form-group">
-                                        <label for="display">Display</label>
+                                        <label for="display">Màn hình</label>
                                         <input  type="text" name="display" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="operating_system">Operating System</label>
+                                        <label for="operating_system">Hệ điều hành</label>
                                         <input  type="text" name="operating_system" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="front_camera">Font camera</label>
+                                        <label for="front_camera">Camera trước</label>
                                         <input  type="number" min="0" name="front_camera" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="rear_camera">Rear camera</label>
+                                        <label for="rear_camera">Camrera sau</label>
                                         <input  type="text" name="rear_camera" class="form-control">
                                     </div>
 
@@ -106,62 +92,62 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="battery">Battery</label>
+                                        <label for="battery">Pin</label>
                                         <input  type="number" min="0" name="battery" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="security">Security</label>
+                                        <label for="security">Bảo mật</label>
                                         <input  type="text" name="security" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="charging_port">Charging port</label>
+                                        <label for="charging_port">Cổng sạc</label>
                                         <input  type="text" name="charging_port" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="compatible">Compatible</label>
+                                        <label for="compatible">Tương thích</label>
                                         <input  type="text" name="compatible" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="sound_technology">Sound Technology</label>
+                                        <label for="sound_technology">Công nghệ âm thanh</label>
                                         <input  type="text" name="sound_technology" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="used_time">Used Time</label>
+                                        <label for="used_time">Thời gian sử dụng</label>
                                         <input  type="text" name="used_time" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="connect">Connect</label>
+                                        <label for="connect">Kết nối</label>
                                         <input  type="text" name="connect" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="weight">Weight</label>
+                                        <label for="weight">Khối lượng</label>
                                         <input  type="text" name="weight" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="brand">Brand</label>
+                                        <label for="brand">Nhãn hiệu</label>
                                         <input  type="text" name="brand" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="made_in">Made in</label>
+                                        <label for="made_in">Sản xuất tại</label>
                                         <input  type="text" name="made_in" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="hard_drive">Hard drive</label>
+                                        <label for="hard_drive">Ổ cứng</label>
                                         <input  type="text" name="hard_drive" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="graphic_card">Graphic card</label>
+                                        <label for="graphic_card">Card đồ họa</label>
                                         <input  type="text" name="graphic_card" class="form-control">
                                     </div>
                                 </div>
@@ -173,7 +159,7 @@
                     <div class="col-md-6">
                         <div class="card card-secondary">
                             <div class="card-header">
-                                <h3 class="card-title">Image for product</h3>
+                                <h3 class="card-title">Thêm hình ảnh</h3>
 
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -186,25 +172,25 @@
 
                                 <table border="1" cellspacing="10px" cellpadding="10px">
                                     <tr>
-                                        <td><label>Image main</label></td>
+                                        <td><label>Ảnh chính</label></td>
                                         <td><input form="form-create-product" name='image' type="file" onchange="readURL(this,'image_preview_main');" /></td>
                                         <td> <img height="100px" width="100px" id="image_preview_main" src="#" alt="your image" /></td>
                                     </tr>
 
                                     <tr>
-                                        <td><label>Image 1</label></td>
+                                        <td><label>Ảnh phụ</label></td>
                                         <td> <input form="form-create-product" name='image_1' type="file" onchange="readURL(this,'image_preview_1');" /></td>
                                         <td>  <img height="100px" width="100px" id="image_preview_1" src="#" alt="your image" /></td>
                                     </tr>
 
                                     <tr>
-                                        <td><label>Image 2</label></td>
+                                        <td><label>Ảnh phụ</label></td>
                                         <td> <input form="form-create-product" name='image_2' type="file" onchange="readURL(this,'image_preview_2')" /></td>
                                         <td>  <img height="100px" width="100px" id="image_preview_2" src="#" alt="your image" /></td>
                                     </tr>
 
                                     <tr>
-                                        <td><label>Image 3</label></td>
+                                        <td><label>Ảnh phụ</label></td>
                                         <td> <input form="form-create-product" name='image_3'  type="file" onchange="readURL(this,'image_preview_3')" /></td>
                                         <td>  <img height="100px" width="100px" id="image_preview_3" src="#" alt="your image" /></td>
                                     </tr>
@@ -218,8 +204,8 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <a href="#" class="btn btn-secondary">Cancel</a>
-                        <input form="form-create-product" type="submit" value="Create new product" class="btn btn-success float-right">
+                        <a href="#" class="btn btn-secondary">Hủy</a>
+                        <input form="form-create-product" type="submit" value="Thêm sản phẩm" class="btn btn-success float-right">
                     </div>
                 </div>
             </section>

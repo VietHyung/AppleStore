@@ -24,6 +24,10 @@ class LoginController extends Controller
     {
         return view('login.index');
     }
+    public function showRegister()
+    {
+        return view('signup.index');
+    }
 
     public function register(request $request){
 
@@ -34,13 +38,13 @@ class LoginController extends Controller
         $user->password = bcrypt($request->password);
             if (User::where('username', '=', $user->username)->exists()) {
                 echo '<script language="javascript">';
-                echo 'alert("da ton tai tai khoan")';
+                echo 'alert("Đã tồn tại tài khoản")';
                 echo '</script>';
             }
             else {
                 $user->save();
                 echo '<script language="javascript">';
-                echo 'alert("dang ky thanh cong")';
+                echo 'alert("Đăng ký thành công !!!")';
                 echo '</script>';
             }
         return view('login.index');
@@ -52,10 +56,6 @@ class LoginController extends Controller
         $username = $request->input('usernamein');
         $password = $request->input('passwordin');
 
-        // $exists_user = User::query()->where('username', $username)
-        // ->where('password', $password)->count();
-        // $user = $request->all();
-        // Auth::login($user);
         if(Auth::attempt(['username' => $username, 'password' =>$password])) {
             $request->session()->regenerate();
 
